@@ -25,6 +25,9 @@ export class List {
     });
   };
 
+  deleteEl(event){
+      event.target.parentElement.parentElement.remove()
+  }
   renderList(obj) {
     const divEl = document.createElement('div');
     divEl.id = 'div-list';
@@ -37,7 +40,7 @@ export class List {
     const buttonEl = document.createElement('button');
     buttonEl.id = 'delete-list';
     buttonEl.innerText = 'X';
-    buttonEl.addEventListener("click", this.printState.bind(this));
+    buttonEl.addEventListener("click", this.deleteEl.bind(this));
     divEl2.appendChild(h2El);
     divEl2.appendChild(buttonEl);
 
